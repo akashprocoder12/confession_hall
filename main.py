@@ -4,6 +4,12 @@ from models import Confession, Comment, Like
 from bson import ObjectId
 from typing import List
 
+from pymongo import MongoClient
+
+client = MongoClient("mongodb+srv://proversionofakash:yXmPmDDhLvZfSx62@cluster0.eiefq2m.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+db = client.confessionDB
+confessions = db.confessions
+
 app = FastAPI()
 
 # CORS for frontend integration
